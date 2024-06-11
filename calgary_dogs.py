@@ -74,9 +74,8 @@ def main():
     monthly_counts = breed_data.groupby(level='Month')['Total'].sum()
     max_registrations = monthly_counts.max()
     most_popular_months = monthly_counts[monthly_counts == max_registrations].index.tolist()
-
+    
     print(f"Most popular month(s) for {breed} dogs: {' '.join(most_popular_months)}")
-
 
 if __name__ == '__main__':
     main()
